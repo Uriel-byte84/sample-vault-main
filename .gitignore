@@ -1,0 +1,15 @@
+# Dependencias (Lo más pesado)
+node_modules/
+backend/uploads/node_modules/
+
+# Configuración personal
+.env
+
+# Archivos de Sistema y logs
+*.log
+.DS_Store
+Thumbs.db
+
+# Carpetas de construcción
+dist/
+build/
