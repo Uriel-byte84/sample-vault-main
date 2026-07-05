@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "vite": "vite",
+    "vite": "vite --root frontend",
     "dev": "concurrently \"npm run server\" \"npm run vite\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

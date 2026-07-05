@@ -2,17 +2,27 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  root: 'frontend', // Le dice a Vite que use la carpeta frontend como base
+  root: 'frontend',
   server: {
-    port: 3000,     // Corre en el puerto 3000
-    open: true      // Te abre el navegador automáticamente al arrancar
+    port: 5173,
+    open: false,
+    // Esto hace que si entrás a la raíz, te redirija automáticamente al login
+    proxy: {
+      '^/$': {
+        target: 'http://localhost:5173/html/login.html',
+        bypass: (req, res) => {
+          res.writeHead(302, { Location: '/html/login.html' });
+          res.end();
+        }
+      }
+    }
   },
   build: {
     outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'frontend/index.html'),
-        dashboard: resolve(__dirname, 'frontend/html/index.html'),
+        login: resolve(__dirname, 'frontend/html/login.html'),
+        dashboard: resolve(__dirname, 'frontend/html/admin-dashboard.html'),
         register: resolve(__dirname, 'frontend/html/register.html')
       }
     }
