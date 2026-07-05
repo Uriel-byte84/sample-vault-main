@@ -1,0 +1,26 @@
+{
+  "name": "sample-vault-main",
+  "version": "1.0.0",
+  "description": "SampleVault es una aplicación web diseñada para la gestión profesional de librerías de sonido.",
+  "main": "backend/server.js",
+  "scripts": {
+    "server": "npm run start --prefix backend",
+    "vite": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run vite\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uriel-byte84/sample-vault-isft151.git"
+  },
+  "author": "Tecnologías Informáticas B - UNMdP",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "vite": "^6.4.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Uriel-byte84/sample-vault-isft151/issues"
+  },
+  "homepage": "https://github.com/Uriel-byte84/sample-vault-isft151#readme"
+}
